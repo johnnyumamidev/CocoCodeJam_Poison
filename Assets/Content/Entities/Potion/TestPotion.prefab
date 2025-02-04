@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c16c6e18b4463614b96555bb2b5ebadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  potionType: 0
 --- !u!61 &-6409101004997055897
 BoxCollider2D:
   m_ObjectHideFlags: 0

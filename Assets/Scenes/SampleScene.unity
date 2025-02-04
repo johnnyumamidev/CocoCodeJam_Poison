@@ -1382,6 +1382,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2386993289374601839, guid: 8ff2d1bcfc2fc094fba6b37a09aca47d, type: 3}
+      propertyPath: potionRequest
+      value: 
+      objectReference: {fileID: 11400000, guid: ca4a06b5ba447244b95c08436399f314, type: 2}
     - target: {fileID: 8391555701686148559, guid: 8ff2d1bcfc2fc094fba6b37a09aca47d, type: 3}
       propertyPath: m_Name
       value: Customer

@@ -179,3 +179,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da824741e00030c4a9047fd0afaf5912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  potionRequest: {fileID: 0}

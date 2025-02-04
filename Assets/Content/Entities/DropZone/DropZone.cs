@@ -14,21 +14,6 @@ public class DropZone : MonoBehaviour
     //list of possible potions that can be made
     [SerializeField] List<PotionSO> potionRecipes = new List<PotionSO>();
 
-    public PotionSO potionToBrewData;
-
-    void OnEnable()
-    {
-        Events.OnCustomerEnter += SetOrderData;
-    }
-    void OnDisable()
-    {
-        Events.OnCustomerEnter -= SetOrderData;
-    }
-
-    void SetOrderData(PotionSO _potionToBrew)
-    {
-        potionToBrewData = _potionToBrew;
-    }
 // ========================================================================
 
     //Add ingredients to list when dropped
@@ -38,40 +23,61 @@ public class DropZone : MonoBehaviour
         _item.transform.SetParent(transform);
     }
 
-
 //TODO REFACTOR BREW FUNCTION
 //  loop through list of potion recipes
 //  if ingredients match one of the recipes, make that potion and break loop
 // ========================================================================
     public void BrewPotion()
     {
-        List<Item> itemsToCheck = new List<Item>(items);
-        //check that the lists are the same length
-        bool listCountsAreEqual = itemsToCheck.Count == potionToBrewData.itemsRequiredToBrew.Count;
-        int numberOfRequiredItemsFound = 0;
+        //create a new list that contains the dropped items
+        int failedBrewCount = 0;
 
-        //double for loop through lists
-        for(int i = 0; i < potionToBrewData.itemsRequiredToBrew.Count; i++)
+        foreach(PotionSO potionRecipe in potionRecipes)
         {
-            for(int j = 0; j < itemsToCheck.Count; j++)
+            List<Item> itemsToCheck = new List<Item>(items);
+            //check that the lists are the same length
+            bool listCountsAreEqual = itemsToCheck.Count == potionRecipe.itemsRequiredToBrew.Count;
+            int numberOfRequiredItemsFound = 0;
+            Debug.Log("num ingredients found: " + itemsToCheck.Count);
+            Debug.Log(potionRecipe.name + " ingredients count: " + potionRecipe.itemsRequiredToBrew.Count);
+            //double for loop through lists
+            for(int i = 0; i < potionRecipe.itemsRequiredToBrew.Count; i++)
             {
-                ItemType itemType = itemsToCheck[j].GetItemType();
-                if(itemType == potionToBrewData.itemsRequiredToBrew[i])
+                for(int j = 0; j < itemsToCheck.Count; j++)
                 {
-                    numberOfRequiredItemsFound++;
-                    itemsToCheck.Remove(itemsToCheck[j]);
-                    break;
+                    ItemType itemType = itemsToCheck[j].GetItemType();
+                    if(itemType == potionRecipe.itemsRequiredToBrew[i])
+                    {
+                        numberOfRequiredItemsFound++;
+                        itemsToCheck.Remove(itemsToCheck[j]);
+                        break;
+                    }
                 }
             }
-        }
- 
-        bool requiredItemsFound = numberOfRequiredItemsFound == potionToBrewData.itemsRequiredToBrew.Count;
-        bool success = listCountsAreEqual && requiredItemsFound;
+    
+            bool requiredItemsFound = numberOfRequiredItemsFound == potionRecipe.itemsRequiredToBrew.Count;
+            bool success = listCountsAreEqual && requiredItemsFound;
 
-        if(success)
-            Events.OnSuccessfulBrew(potionToBrewData);
-        else 
+            if(success)
+            {
+                Events.OnSuccessfulBrew(potionRecipe);
+                break;
+            }
+            else
+            {
+                Debug.Log(potionRecipe.name + " brew FAIL due to:");
+                Debug.Log("num of ingredients equal? " + listCountsAreEqual);
+                Debug.Log("required ingreients found? " + requiredItemsFound);
+                failedBrewCount++;
+                continue;
+            }
+        }
+
+        //if ingredients list does not match ANY of the available recipes, failed brew
+        if(failedBrewCount >= potionRecipes.Count)
+        {
             Events.OnFailedBrew();
+        }
 
         ClearItems();
     }

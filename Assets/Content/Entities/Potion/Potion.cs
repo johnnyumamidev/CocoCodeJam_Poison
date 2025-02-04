@@ -29,6 +29,11 @@ public class Potion : MonoBehaviour
         }
     }
 
+    public void SetPotionType(PotionType _potionType)
+    {
+        potionType = _potionType;
+        name = potionType.ToString() + " Potion";
+    }
     public PotionType GetPotionType()
     {
         return potionType;

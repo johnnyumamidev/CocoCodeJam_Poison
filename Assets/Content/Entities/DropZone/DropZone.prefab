@@ -213,7 +213,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
-  itemsRequiredToBrew: 
+  potionRecipes: []
+  potionToBrewData: {fileID: 0}
 --- !u!114 &6560037908758533706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,5 +227,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebebc12f73e7f9b4c83a5b0db8543dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potionPrefab: {fileID: 846959159872478540, guid: d263f0ddc814ad64ca010de66cbdaea9, type: 3}
   spawnPoint: {fileID: 6294730314031498943}
