@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457f1e54376b0464f82e99c322e00bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 0
   dropCheckRadius: 1
 --- !u!1 &9045431132395364777
 GameObject:

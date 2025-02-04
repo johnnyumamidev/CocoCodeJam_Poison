@@ -3,8 +3,15 @@ using UnityEngine.Events;
 
 public static class Events
 {
+    //Ingredient Handling
     public static UnityAction<GameObject> OnItemSpawned;
     public static UnityAction<GameObject> OnItemDropped;
-    public static UnityAction OnSuccessfulBrew;
+
+    //Potion Brewing
+    public static UnityAction<PotionSO> OnSuccessfulBrew;
     public static UnityAction OnFailedBrew;
+ 
+    //Customer Events
+    public static UnityAction<PotionSO> OnCustomerEnter;
+    public static UnityAction OnPotionDelivered;
 }

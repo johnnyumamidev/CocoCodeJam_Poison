@@ -16,9 +16,9 @@ public class GameUI : MonoBehaviour
         Events.OnFailedBrew -= FailText;
     }
 
-    void SuccessText()
+    void SuccessText(PotionSO _potionSO)
     {
-        uiText.text = "Successful Brew";
+        uiText.text = "Successfully Brewed: " + _potionSO.prefab.name;
     }
 
     void FailText()
