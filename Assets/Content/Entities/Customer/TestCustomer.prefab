@@ -497,4 +497,6 @@ MonoBehaviour:
   potionsNeeded:
   - {fileID: 11400000, guid: ca4a06b5ba447244b95c08436399f314, type: 2}
   - {fileID: 11400000, guid: 37ed024c75c03b44d84a701edc37917b, type: 2}
+  speechBubble: {fileID: 6784079085452662533}
   dialogue: {fileID: 6361351542356650578}
+  moveSpeed: 6

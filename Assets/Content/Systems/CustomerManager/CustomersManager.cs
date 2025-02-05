@@ -6,13 +6,16 @@ public class CustomersManager : MonoBehaviour
     void OnEnable()
     {
         Events.OnSymptomsCured += TakeOutCurrentCustomer;
+        Events.OnCustomerLeft += ResetCustomer;
     }   
     void OnDisable()
     {
         Events.OnSymptomsCured -= TakeOutCurrentCustomer;
+        Events.OnCustomerLeft -= ResetCustomer;
     }   
 
     [SerializeField] List<GameObject> customerPrefabs = new List<GameObject>();
+    Customer currentCustomer;
     
     [Header("Customer Movement")]
     [SerializeField] Transform spawnPoint;
@@ -23,17 +26,32 @@ public class CustomersManager : MonoBehaviour
     {
         BringInNewCustomer();
     }
+    void Update()
+    {
+        //check if customer is at the counter
+        if(currentCustomer == null)
+        {
+            BringInNewCustomer();
+        }
+    }
 
     void BringInNewCustomer()
     {
         GameObject newCustomer = Instantiate(customerPrefabs[Random.Range(0, customerPrefabs.Count)], spawnPoint.position, Quaternion.identity);
-        Customer customer = newCustomer.GetComponent<Customer>();
+        currentCustomer = newCustomer.GetComponent<Customer>();
 
-        customer.SetMoveTarget(readyPoint.position);
+        currentCustomer.SetMoveTarget(readyPoint.position, false);
     }
 
     void TakeOutCurrentCustomer()
     {
         //when customer has left, call BRINGINCUSTOMER again
+        currentCustomer.SetMoveTarget(exitPoint.position, true);
+    }
+
+    void ResetCustomer()
+    {
+        Destroy(currentCustomer.gameObject);
+        currentCustomer = null;
     }
 }

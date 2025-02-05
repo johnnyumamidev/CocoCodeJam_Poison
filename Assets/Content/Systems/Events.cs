@@ -13,6 +13,7 @@ public static class Events
  
     //Customer Events
     public static UnityAction OnCustomerReady;
+    public static UnityAction OnCustomerLeft;
     public static UnityAction OnSymptomsCured;
     public static UnityAction OnTimeUp;
 }

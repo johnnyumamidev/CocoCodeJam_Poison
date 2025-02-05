@@ -6,21 +6,20 @@ public class TimerSystem : MonoBehaviour
     void OnEnable()
     {
         Events.OnCustomerReady += StartTimer;
-        Events.OnSymptomsCured += StopTimer;
+        Events.OnSymptomsCured += ResetTimer;
     }
     void OnDisable()
     {
         Events.OnCustomerReady -= StartTimer;
-        Events.OnSymptomsCured -= StopTimer;
+        Events.OnSymptomsCured -= ResetTimer;
     }
 
     bool customerReady = false;
     [SerializeField] float maxTime = 2f;
     float currentTime;
-    
     void Start()
     {
-        currentTime = maxTime;
+        ResetTimer();
     }
     void Update()
     {
@@ -43,13 +42,12 @@ public class TimerSystem : MonoBehaviour
     void StartTimer()
     {
         ResetTimer();
+        customerReady = true;
     }
-    void StopTimer()
-    {
 
-    }
     void ResetTimer()
     {
-
+        currentTime = maxTime;
+        customerReady = false;
     }
 }
