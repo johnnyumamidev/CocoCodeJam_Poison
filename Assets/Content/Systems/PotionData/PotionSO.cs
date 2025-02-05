@@ -8,9 +8,12 @@ public class PotionSO : ScriptableObject
     public GameObject prefab;
     public PotionType potionType;
     public Color potionColor;
+
+    //Text to display
+    public string symptomDialogue;
 }
 
 public enum PotionType
 {
-    Red, Blue, Green, Yellow
+    Red, Blue, Green, Yellow, Purple, Orange
 }

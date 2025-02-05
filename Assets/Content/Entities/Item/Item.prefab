@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
-  dropCheckRadius: 1
+  dropCheckRadius: 0.5
 --- !u!1 &9045431132395364777
 GameObject:
   m_ObjectHideFlags: 0

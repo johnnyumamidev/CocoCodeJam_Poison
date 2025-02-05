@@ -13,7 +13,16 @@ public class Customer : MonoBehaviour
     bool isLeaving = false;
     [SerializeField] float moveSpeed = 5f;
     Vector3 moveTarget;
- 
+    
+    void Start()
+    {
+        // randomly determine how many symptoms they have
+        InitializeSymptoms();
+
+        //go through list of potions and generate sprite for all the different symptoms
+        GenerateVisuals();
+
+    }
     void Update()
     {
         if(isMoving)
@@ -22,8 +31,10 @@ public class Customer : MonoBehaviour
         }
 
         // DISPLAY WHAT POTION THEY NEED
+        // REFACTOR: make dialogue display patient symptoms rather than what color potion they want
+        //  example: "i have chills" "i feel like throwing up" "my head is pounding"
             if(potionsNeeded.Count > 0)
-                dialogue.text = "I need a " + potionsNeeded[0].name;
+                dialogue.text = potionsNeeded[0].symptomDialogue;
             else 
                 dialogue.text = "Thanks I feel much better now!";
     }
@@ -39,6 +50,8 @@ public class Customer : MonoBehaviour
                 break;
             }
         }
+
+        //update visuals based on cured symptoms
 
         //if potions needed has been depleted, change customer
         if(potionsNeeded.Count <= 0)
@@ -75,5 +88,24 @@ public class Customer : MonoBehaviour
             }
             isMoving = false;
         }
+    }
+
+    void InitializeSymptoms()
+    {
+        // TODO make max symptoms dynamic and variable based on how far in the game you are
+        //  example: easy mode max = 2, hard = 5
+        int maxSymptoms = 5;
+        int numberOfSymptoms = Random.Range(1, maxSymptoms);
+
+        //get list of all possible potions
+        List<PotionSO> potions = new List<PotionSO>(FindObjectOfType<PotionRecipes>().GetPotionRecipes());
+        for(int i = 0; i < numberOfSymptoms; i++)
+        {
+            potionsNeeded.Add(potions[Random.Range(0, potions.Count)]);
+        }
+    }
+    void GenerateVisuals()
+    {
+        
     }
 }

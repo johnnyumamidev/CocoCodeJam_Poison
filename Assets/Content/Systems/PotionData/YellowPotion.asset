@@ -16,3 +16,4 @@ MonoBehaviour:
   prefab: {fileID: 846959159872478540, guid: d263f0ddc814ad64ca010de66cbdaea9, type: 3}
   potionType: 3
   potionColor: {r: 1, g: 0.9495394, b: 0.1490565, a: 1}
+  symptomDialogue: 

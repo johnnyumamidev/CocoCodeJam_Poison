@@ -14,7 +14,7 @@ public class CustomersManager : MonoBehaviour
         Events.OnCustomerLeft -= ResetCustomer;
     }   
 
-    [SerializeField] List<GameObject> customerPrefabs = new List<GameObject>();
+    [SerializeField] GameObject customerPrefab;
     Customer currentCustomer;
     
     [Header("Customer Movement")]
@@ -37,7 +37,7 @@ public class CustomersManager : MonoBehaviour
 
     void BringInNewCustomer()
     {
-        GameObject newCustomer = Instantiate(customerPrefabs[Random.Range(0, customerPrefabs.Count)], spawnPoint.position, Quaternion.identity);
+        GameObject newCustomer = Instantiate(customerPrefab, spawnPoint.position, Quaternion.identity);
         currentCustomer = newCustomer.GetComponent<Customer>();
 
         currentCustomer.SetMoveTarget(readyPoint.position, false);

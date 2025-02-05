@@ -16,3 +16,4 @@ MonoBehaviour:
   prefab: {fileID: 846959159872478540, guid: d263f0ddc814ad64ca010de66cbdaea9, type: 3}
   potionType: 1
   potionColor: {r: 0.13189735, g: 0.22321291, b: 0.93207544, a: 1}
+  symptomDialogue: My head is pounding!

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57444a01457cfff4aac441a2ff2056de, type: 3}
-  m_Name: GreenPotion
+  m_Name: PurplePotion
   m_EditorClassIdentifier: 
-  itemsRequiredToBrew: 0200000001000000
+  itemsRequiredToBrew: 000000000200000001000000
   prefab: {fileID: 846959159872478540, guid: d263f0ddc814ad64ca010de66cbdaea9, type: 3}
-  potionType: 2
-  potionColor: {r: 0.2413029, g: 0.89433956, b: 0.3441825, a: 1}
-  symptomDialogue: I feel like throwing up...
+  potionType: 4
+  potionColor: {r: 0.93333334, g: 0.07450977, b: 0.81628627, a: 1}
+  symptomDialogue: I've got the worst chills

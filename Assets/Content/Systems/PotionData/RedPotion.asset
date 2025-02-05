@@ -16,3 +16,4 @@ MonoBehaviour:
   prefab: {fileID: 846959159872478540, guid: d263f0ddc814ad64ca010de66cbdaea9, type: 3}
   potionType: 0
   potionColor: {r: 0.93207544, g: 0.07562114, b: 0.07562114, a: 1}
+  symptomDialogue: I have the worst fever...
