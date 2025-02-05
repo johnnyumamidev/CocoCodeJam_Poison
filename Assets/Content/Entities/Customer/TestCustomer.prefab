@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 3210099784135917300}
   - component: {fileID: 2386993289374601839}
   m_Layer: 0
-  m_Name: Customer
+  m_Name: TestCustomer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,4 +179,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da824741e00030c4a9047fd0afaf5912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potionRequest: {fileID: 0}
+  potionsNeeded: []
+  dialogue: {fileID: 0}

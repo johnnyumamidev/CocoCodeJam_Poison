@@ -4,6 +4,8 @@ public class Potion : MonoBehaviour
 {
     bool isBeingDragged = false;
     [SerializeField] PotionType potionType;
+
+    [SerializeField] SpriteRenderer potionRenderer;
     // Update is called once per frame
     void Update()
     {
@@ -37,8 +39,7 @@ public class Potion : MonoBehaviour
         name = potionType.ToString() + " Potion";
         
         //Change Sprite Color
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        sr.color = _potionData.potionColor;
+        potionRenderer.color = _potionData.potionColor;
     }
     public PotionType GetPotionType()
     {

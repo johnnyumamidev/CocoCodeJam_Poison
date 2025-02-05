@@ -214,7 +214,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items: []
   potionRecipes: []
-  potionToBrewData: {fileID: 0}
 --- !u!114 &6560037908758533706
 MonoBehaviour:
   m_ObjectHideFlags: 0
