@@ -18,6 +18,6 @@ public class PotionSpawner : MonoBehaviour
         GameObject potionObj = Instantiate(potionSO.prefab, spawnPoint.position, Quaternion.identity);
         Potion potionScript = potionObj.GetComponent<Potion>();
 
-        potionScript.SetPotionType(potionSO.potionType);
+        potionScript.SetPotionType(potionSO);
     }
 }

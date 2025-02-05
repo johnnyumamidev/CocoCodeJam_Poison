@@ -1,26 +1,35 @@
 using UnityEngine;
+using System.Collections.Generic;
+using TMPro;
 
 public class Customer : MonoBehaviour
 {
-    public PotionSO potionRequest;
-
+    [SerializeField] List<PotionSO> potionsNeeded = new List<PotionSO>();
+    [SerializeField] TextMeshProUGUI dialogue;
+    void Update()
+    {
+        if(potionsNeeded.Count > 0)
+            dialogue.text = "I need a " + potionsNeeded[0].name;
+        else 
+            dialogue.text = "Thanks I feel much better now!";
+    }
+    
     public void RecievePotion(Potion _potion)
     {
-        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
-        //check if potion is correct
-        //if correct
-        if(_potion.GetPotionType() == potionRequest.potionType)
+        //check if potion is one of the needed potions
+        foreach(PotionSO potion in potionsNeeded)
         {
-            Events.OnPotionDelivered();
+            if(_potion.GetPotionType() == potion.potionType)
+            {
+                potionsNeeded.Remove(potion);
+                break;
+            }
+        }
 
-            //TEST CORRECT POTION RECEIEVED
-            sr.color = Color.green;
-        }
-        else 
+        //if potions needed has been depleted, change customer
+        if(potionsNeeded.Count <= 0)
         {
-            //INCORRECT POTION RECEIVED
-            sr.color = Color.red;
+            Events.OnSymptomsCured();
         }
-        
     }
 }

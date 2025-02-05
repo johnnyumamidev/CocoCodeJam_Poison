@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57444a01457cfff4aac441a2ff2056de, type: 3}
-  m_Name: TestPotion 1
+  m_Name: BluePotion
   m_EditorClassIdentifier: 
   itemsRequiredToBrew: 0000000002000000
   prefab: {fileID: 846959159872478540, guid: d263f0ddc814ad64ca010de66cbdaea9, type: 3}
   potionType: 1
+  potionColor: {r: 0.13189735, g: 0.22321291, b: 0.93207544, a: 1}

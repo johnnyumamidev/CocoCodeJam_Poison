@@ -6,11 +6,11 @@ public class Game : MonoBehaviour
     //Handle customers coming and going into the shop
     void OnEnable()
     {
-        Events.OnPotionDelivered += ChangeCustomer;
+        Events.OnSymptomsCured += ChangeCustomer;
     }
     void OnDisable()
     {
-        Events.OnPotionDelivered -= ChangeCustomer;
+        Events.OnSymptomsCured -= ChangeCustomer;
     }
 
     void ChangeCustomer()

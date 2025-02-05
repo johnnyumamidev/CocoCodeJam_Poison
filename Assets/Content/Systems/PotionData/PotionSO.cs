@@ -7,6 +7,7 @@ public class PotionSO : ScriptableObject
     public List<ItemType> itemsRequiredToBrew = new();
     public GameObject prefab;
     public PotionType potionType;
+    public Color potionColor;
 }
 
 public enum PotionType

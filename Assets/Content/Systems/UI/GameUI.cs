@@ -18,7 +18,7 @@ public class GameUI : MonoBehaviour
 
     void SuccessText(PotionSO _potionSO)
     {
-        uiText.text = "Successfully Brewed: " + _potionSO.prefab.name;
+        uiText.text = "Successfully Brewed: " + _potionSO.name;
     }
 
     void FailText()

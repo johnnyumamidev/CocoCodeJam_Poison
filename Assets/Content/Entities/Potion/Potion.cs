@@ -29,10 +29,16 @@ public class Potion : MonoBehaviour
         }
     }
 
-    public void SetPotionType(PotionType _potionType)
+    public void SetPotionType(PotionSO _potionData)
     {
-        potionType = _potionType;
+        potionType = _potionData.potionType;
+        
+        //Assign name
         name = potionType.ToString() + " Potion";
+        
+        //Change Sprite Color
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr.color = _potionData.potionColor;
     }
     public PotionType GetPotionType()
     {

@@ -13,5 +13,6 @@ public static class Events
  
     //Customer Events
     public static UnityAction<PotionSO> OnCustomerEnter;
+    public static UnityAction OnSymptomsCured;
     public static UnityAction OnPotionDelivered;
 }

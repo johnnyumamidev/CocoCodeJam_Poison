@@ -29,22 +29,26 @@ public class DropZone : MonoBehaviour
 // ========================================================================
     public void BrewPotion()
     {
-        //create a new list that contains the dropped items
         int failedBrewCount = 0;
 
         foreach(PotionSO potionRecipe in potionRecipes)
         {
+            //create a new list that contains the dropped items
             List<Item> itemsToCheck = new List<Item>(items);
+            
             //check that the lists are the same length
             bool listCountsAreEqual = itemsToCheck.Count == potionRecipe.itemsRequiredToBrew.Count;
+            
+            //intialise int checking for correct ingredients
             int numberOfRequiredItemsFound = 0;
-            Debug.Log("num ingredients found: " + itemsToCheck.Count);
-            Debug.Log(potionRecipe.name + " ingredients count: " + potionRecipe.itemsRequiredToBrew.Count);
-            //double for loop through lists
+
+            //double for loop
+            //  for every required ingredient, go through list of ingredients in POT 
             for(int i = 0; i < potionRecipe.itemsRequiredToBrew.Count; i++)
             {
                 for(int j = 0; j < itemsToCheck.Count; j++)
                 {
+                    // if correct ingredient is found, end loop and remove from list of ingredients to check
                     ItemType itemType = itemsToCheck[j].GetItemType();
                     if(itemType == potionRecipe.itemsRequiredToBrew[i])
                     {
@@ -65,15 +69,12 @@ public class DropZone : MonoBehaviour
             }
             else
             {
-                Debug.Log(potionRecipe.name + " brew FAIL due to:");
-                Debug.Log("num of ingredients equal? " + listCountsAreEqual);
-                Debug.Log("required ingreients found? " + requiredItemsFound);
                 failedBrewCount++;
                 continue;
             }
         }
 
-        //if ingredients list does not match ANY of the available recipes, failed brew
+        //if ingredients in POT does not match ANY of the available recipes, brew failed
         if(failedBrewCount >= potionRecipes.Count)
         {
             Events.OnFailedBrew();
