@@ -12,7 +12,7 @@ public static class Events
     public static UnityAction OnFailedBrew;
  
     //Customer Events
-    public static UnityAction<PotionSO> OnCustomerEnter;
+    public static UnityAction OnCustomerReady;
     public static UnityAction OnSymptomsCured;
     public static UnityAction OnTimeUp;
 }

@@ -6,12 +6,15 @@ public class Customer : MonoBehaviour
 {
     [SerializeField] List<PotionSO> potionsNeeded = new List<PotionSO>();
     [SerializeField] TextMeshProUGUI dialogue;
+ 
     void Update()
     {
-        if(potionsNeeded.Count > 0)
-            dialogue.text = "I need a " + potionsNeeded[0].name;
-        else 
-            dialogue.text = "Thanks I feel much better now!";
+        // TESTING
+            if(potionsNeeded.Count > 0)
+                dialogue.text = "I need a " + potionsNeeded[0].name;
+            else 
+                dialogue.text = "Thanks I feel much better now!";
+        // UPDATE LATER
     }
     
     public void RecievePotion(Potion _potion)
@@ -30,6 +33,17 @@ public class Customer : MonoBehaviour
         if(potionsNeeded.Count <= 0)
         {
             Events.OnSymptomsCured();
+        }
+    }
+
+    public void SetMoveTarget(Vector3 targetPosition)
+    {
+        float moveSpeed = 5f;
+        float distanceToTarget = Vector2.Distance(targetPosition, transform.position);
+        Vector3 dirToTarget = targetPosition - transform.position;
+        while(distanceToTarget > 0)
+        {
+            transform.Translate(dirToTarget * moveSpeed * Time.deltaTime);
         }
     }
 }

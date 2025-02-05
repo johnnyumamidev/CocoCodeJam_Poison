@@ -2,21 +2,16 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-   
     //Handle customers coming and going into the shop
     void OnEnable()
     {
-        Events.OnSymptomsCured += ChangeCustomer;
     }
     void OnDisable()
     {
-        Events.OnSymptomsCured -= ChangeCustomer;
     }
 
-    void ChangeCustomer()
+    void Start()
     {
-        //Swap out current customer with new customer
-        Debug.Log("Change Customer");
     }
 
     //TODO GAME LOOP
