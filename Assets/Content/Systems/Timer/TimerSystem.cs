@@ -6,12 +6,10 @@ public class TimerSystem : MonoBehaviour
     void OnEnable()
     {
         Events.OnCustomerReady += StartTimer;
-        Events.OnSymptomsCured += ResetTimer;
     }
     void OnDisable()
     {
         Events.OnCustomerReady -= StartTimer;
-        Events.OnSymptomsCured -= ResetTimer;
     }
 
     bool customerReady = false;

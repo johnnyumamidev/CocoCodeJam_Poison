@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: a338b420416f3b84fab3da23add2fa3b
+guid: e102695752dcee34bb7b98a6a3b1ea3f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6468302067490962056
-    second: chills_0
+      213: 1129464961443762048
+    second: hotBerry_0
   - first:
-      213: -4980939022693557595
-    second: chills_1
+      213: 217634545181975441
+    second: hotBerry_1
+  - first:
+      213: 6887087901268577421
+    second: hotBerry_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -49,12 +52,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 320
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,13 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chills_0
+      name: hotBerry_0
       rect:
         serializedVersion: 2
-        x: 61
-        y: 50
-        width: 163
-        height: 213
+        x: 49
+        y: 183
+        width: 140
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 875c6474a89fb36a0800000000000000
-      internalID: -6468302067490962056
+      spriteID: 08f0b15f56aacaf00800000000000000
+      internalID: 1129464961443762048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chills_1
+      name: hotBerry_1
       rect:
         serializedVersion: 2
-        x: 131
-        y: 48
-        width: 151
-        height: 153
+        x: 93
+        y: 33
+        width: 124
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +169,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5aa1878595620eab0800000000000000
-      internalID: -4980939022693557595
+      spriteID: 193ec6c3771350300800000000000000
+      internalID: 217634545181975441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hotBerry_2
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 27
+        width: 58
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8c0104f4f9d39f50800000000000000
+      internalID: 6887087901268577421
       vertices: []
       indices: 
       edges: []
@@ -176,7 +201,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -186,8 +211,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      chills_0: -6468302067490962056
-      chills_1: -4980939022693557595
+      hotBerry_0: 1129464961443762048
+      hotBerry_1: 217634545181975441
+      hotBerry_2: 6887087901268577421
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

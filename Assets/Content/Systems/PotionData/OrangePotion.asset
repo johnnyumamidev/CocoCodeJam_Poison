@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57444a01457cfff4aac441a2ff2056de, type: 3}
   m_Name: OrangePotion
   m_EditorClassIdentifier: 
-  itemsRequiredToBrew: 000000000100000001000000
+  itemsRequiredToBrew: 030000000100000002000000
   prefab: {fileID: 846959159872478540, guid: d263f0ddc814ad64ca010de66cbdaea9, type: 3}
   potionType: 5
   potionColor: {r: 1, g: 0.5058824, b: 0.1490565, a: 1}

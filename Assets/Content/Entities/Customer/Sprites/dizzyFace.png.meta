@@ -1,13 +1,22 @@
 fileFormatVersion: 2
-guid: a338b420416f3b84fab3da23add2fa3b
+guid: 95402cff68960ff4685d3c4701934c23
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6468302067490962056
-    second: chills_0
+      213: -3945129403761569447
+    second: dizzyFace_0
   - first:
-      213: -4980939022693557595
-    second: chills_1
+      213: -728090320134110808
+    second: dizzyFace_1
+  - first:
+      213: 1876347957827810843
+    second: dizzyFace_2
+  - first:
+      213: -1778589427095101193
+    second: dizzyFace_3
+  - first:
+      213: -4175436867654659772
+    second: dizzyFace_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -49,12 +58,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 320
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,13 +138,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chills_0
+      name: dizzyFace_0
       rect:
         serializedVersion: 2
-        x: 61
-        y: 50
-        width: 163
-        height: 213
+        x: 55
+        y: 212
+        width: 73
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 875c6474a89fb36a0800000000000000
-      internalID: -6468302067490962056
+      spriteID: 951d7df95b51049c0800000000000000
+      internalID: -3945129403761569447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chills_1
+      name: dizzyFace_1
       rect:
         serializedVersion: 2
-        x: 131
-        y: 48
-        width: 151
-        height: 153
+        x: 182
+        y: 216
+        width: 101
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +175,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5aa1878595620eab0800000000000000
-      internalID: -4980939022693557595
+      spriteID: 8a1810026bd45e5f0800000000000000
+      internalID: -728090320134110808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dizzyFace_2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 138
+        width: 74
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b163b5db6802a0a10800000000000000
+      internalID: 1876347957827810843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dizzyFace_3
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 139
+        width: 77
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f02bb4e65e2157e0800000000000000
+      internalID: -1778589427095101193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dizzyFace_4
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 25
+        width: 172
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 441df519a4edd06c0800000000000000
+      internalID: -4175436867654659772
       vertices: []
       indices: 
       edges: []
@@ -176,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -186,8 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      chills_0: -6468302067490962056
-      chills_1: -4980939022693557595
+      dizzyFace_0: -3945129403761569447
+      dizzyFace_1: -728090320134110808
+      dizzyFace_2: 1876347957827810843
+      dizzyFace_3: -1778589427095101193
+      dizzyFace_4: -4175436867654659772
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
