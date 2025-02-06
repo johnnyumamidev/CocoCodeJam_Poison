@@ -38,5 +38,5 @@ public class Item : MonoBehaviour
 
 public enum ItemType 
 {
-    A, B, C, D
+    A, B, C, D, E
 }

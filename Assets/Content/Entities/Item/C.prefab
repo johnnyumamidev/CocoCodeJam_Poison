@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1039825631517368817, guid: e749d4960d922cc4b8015e1c6f886944, type: 3}
       propertyPath: m_Name
-      value: Item Variant 1
+      value: C
       objectReference: {fileID: 0}
     - target: {fileID: 7409623856671802777, guid: e749d4960d922cc4b8015e1c6f886944, type: 3}
       propertyPath: m_LocalPosition.x
@@ -59,7 +59,7 @@ PrefabInstance:
     - target: {fileID: 7965381915068673783, guid: e749d4960d922cc4b8015e1c6f886944, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f10a0d61255d71540b07c90d10157a10, type: 3}
+      objectReference: {fileID: 21300000, guid: 5e0a749001aa76d4a8020a43b9e8b5ee, type: 3}
     - target: {fileID: 7965381915068673783, guid: e749d4960d922cc4b8015e1c6f886944, type: 3}
       propertyPath: m_Color.b
       value: 1

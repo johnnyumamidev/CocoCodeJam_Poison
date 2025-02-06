@@ -23,7 +23,7 @@ public class ButtonEvents : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     //Detect when Cursor leaves the GameObject
     public void OnPointerExit(PointerEventData pointerEventData)
     {
-        transform.localScale = transform.localScale / scaler;
+        transform.localScale = Vector3.one;
  
         OnExit?.Invoke();
     }
