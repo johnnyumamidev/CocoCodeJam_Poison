@@ -1,17 +1,28 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-    //Handle customers coming and going into the shop
     void OnEnable()
     {
+        Time.timeScale = 1;
+
+        Events.OnTimeUp += GameOver;
     }
     void OnDisable()
     {
+        Events.OnTimeUp -= GameOver;
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
     }
 
-    void Start()
+    public GameObject gameOverScreen;
+    void GameOver()
     {
+        Time.timeScale = 0;
+        gameOverScreen.SetActive(true);
     }
 
     //TODO GAME LOOP

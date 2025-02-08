@@ -3,21 +3,12 @@ using UnityEngine.UI;
 
 public class TimerSystem : MonoBehaviour
 {
-    void OnEnable()
-    {
-        Events.OnCustomerReady += StartTimer;
-    }
-    void OnDisable()
-    {
-        Events.OnCustomerReady -= StartTimer;
-    }
-
     bool customerReady = false;
     [SerializeField] float maxTime = 2f;
     float currentTime;
     void Start()
     {
-        ResetTimer();
+        StartTimer();
     }
     void Update()
     {

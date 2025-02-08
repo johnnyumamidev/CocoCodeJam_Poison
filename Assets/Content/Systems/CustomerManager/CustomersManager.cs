@@ -5,17 +5,18 @@ public class CustomersManager : MonoBehaviour
 {
     void OnEnable()
     {
-        Events.OnSymptomsCured += TakeOutCurrentCustomer;
+        Events.OnCustomerLeaving += TakeOutCurrentCustomer;
         Events.OnCustomerLeft += ResetCustomer;
     }   
     void OnDisable()
     {
-        Events.OnSymptomsCured -= TakeOutCurrentCustomer;
+        Events.OnCustomerLeaving -= TakeOutCurrentCustomer;
         Events.OnCustomerLeft -= ResetCustomer;
     }   
 
     [SerializeField] GameObject customerPrefab;
     Customer currentCustomer;
+    int minSymptomCount = 0;
     
     [Header("Customer Movement")]
     [SerializeField] Transform spawnPoint;
@@ -24,6 +25,7 @@ public class CustomersManager : MonoBehaviour
 
     void Start()
     {
+        //Set max number of possible symptoms for customers
         BringInNewCustomer();
     }
     void Update()
@@ -35,11 +37,16 @@ public class CustomersManager : MonoBehaviour
         }
     }
 
+    public void SetDifficulty(int difficulty)
+    {
+        minSymptomCount = difficulty;
+    }
     void BringInNewCustomer()
     {
         GameObject newCustomer = Instantiate(customerPrefab, spawnPoint.position, Quaternion.identity);
         currentCustomer = newCustomer.GetComponent<Customer>();
 
+        currentCustomer.minSymptoms = minSymptomCount;
         currentCustomer.SetMoveTarget(readyPoint.position, false);
     }
 

@@ -7,6 +7,10 @@ public class DropZone : MonoBehaviour
     // create a container holding any dropped gameObjects
     public List<Item> items = new List<Item>();
 
+    //SFX SOURCE
+    [SerializeField] AudioSource SFX;
+    [SerializeField] AudioClip splashClip;
+
 //TODO REFACTOR
     //change system so that there's a list of possible recipes always available rather than only the correct recipe
 // ========================================================================
@@ -21,6 +25,9 @@ public class DropZone : MonoBehaviour
     {
         items.Add(_item);
         _item.transform.SetParent(transform);
+
+        //Play splashSFX
+        SFX.PlayOneShot(splashClip);
     }
 
 //TODO REFACTOR BREW FUNCTION

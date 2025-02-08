@@ -6,6 +6,9 @@ public class Potion : MonoBehaviour
     [SerializeField] PotionType potionType;
 
     [SerializeField] SpriteRenderer potionRenderer;
+
+    AudioSource SFX;
+    [SerializeField] AudioClip grabClip;
     // Update is called once per frame
     void Update()
     {
@@ -17,6 +20,12 @@ public class Potion : MonoBehaviour
     void OnMouseDown()
     {
         isBeingDragged = true;
+
+        //play grab SFX
+        if(SFX == null)
+            SFX = GetComponentInChildren<AudioSource>();
+
+        SFX.PlayOneShot(grabClip);
     }
     void OnMouseUp()
     {

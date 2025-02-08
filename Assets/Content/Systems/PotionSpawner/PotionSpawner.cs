@@ -3,14 +3,19 @@ using UnityEngine;
 public class PotionSpawner : MonoBehaviour
 {
     [SerializeField] Transform spawnPoint;
+    [SerializeField] GameObject failText;
     
     void OnEnable()
     {
         Events.OnSuccessfulBrew += SpawnPotion;
+
+        Events.OnFailedBrew += FailPotion;
     }
     void OnDisable()
     {
         Events.OnSuccessfulBrew -= SpawnPotion;
+        
+        Events.OnFailedBrew -= FailPotion;
     }
 
     void SpawnPotion(PotionSO potionSO)
@@ -19,5 +24,16 @@ public class PotionSpawner : MonoBehaviour
         Potion potionScript = potionObj.GetComponent<Potion>();
 
         potionScript.SetPotionType(potionSO);
+    }
+
+    void FailPotion()
+    {
+        failText.SetActive(true);
+        Invoke("DisableText", 0.5f);
+    }
+
+    void DisableText()
+    {
+        failText.SetActive(false);
     }
 }

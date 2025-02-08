@@ -5,6 +5,8 @@ using TMPro;
 public class GameUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI uiText;
+    [SerializeField] TextMeshProUGUI scoreText;
+    int score = 0;
 
     [Header("Timer")]
     [SerializeField] TimerSystem timer;
@@ -12,45 +14,33 @@ public class GameUI : MonoBehaviour
     
     [SerializeField] Color startColor, midColor, endColor;
 
+    [Header("Game Over Screen")]
+    [SerializeField] TextMeshProUGUI finalScoreText;
+
     void OnEnable()
     {
-        Events.OnSuccessfulBrew += SuccessText;
-        Events.OnFailedBrew += FailText;
+        Events.OnSymptomsCured += UpdateScore;
 
-        Events.OnTimeUp += LoseScreen;
+        Events.OnTimeUp += DisplayFinalScore;
     }
     void OnDisable()
     {
-        Events.OnSuccessfulBrew -= SuccessText;
-        Events.OnFailedBrew -= FailText;
-    
-        Events.OnTimeUp -= LoseScreen;
+        Events.OnSymptomsCured += UpdateScore;
+
+        Events.OnTimeUp -= DisplayFinalScore;
     }
     void Update()
     {
         timerUI.fillAmount = timer.GetTimePercentage();
         
         ChangeTimerColor(); 
-    }
-    
-    void SuccessText(PotionSO _potionSO)
-    {
-        uiText.text = "Successfully Brewed: " + _potionSO.name;
-    }
-    void FailText()
-    {
-        uiText.text = "Failed Brew";
-    }
 
-    void WinScreen()
-    {
-
+        scoreText.text = "Patients Helped: " + score;
     }
-    void LoseScreen()
+    void DisplayFinalScore()
     {
-        uiText.text = "GAME OVER";
+        finalScoreText.text = score.ToString();
     }
-
     void ChangeTimerColor()
     {
         if(timerUI.fillAmount > 0.7f)
@@ -65,5 +55,10 @@ public class GameUI : MonoBehaviour
         {
             timerUI.color = endColor;
         }
+    }
+
+    void UpdateScore()
+    {
+        score++;
     }
 }
